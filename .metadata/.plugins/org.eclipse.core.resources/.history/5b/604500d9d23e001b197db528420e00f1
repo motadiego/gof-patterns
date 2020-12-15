@@ -1,0 +1,10 @@
+package br.com.gof.patterns.observer2;
+
+public class Corretora2Observer implements Observer {
+
+	@Override
+	public void next(Object data) {
+		System.out.println("Corretora 02: " + data);
+	}
+
+}

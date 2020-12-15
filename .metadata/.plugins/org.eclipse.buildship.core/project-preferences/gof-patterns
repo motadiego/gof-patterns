@@ -1,0 +1,12 @@
+#
+#Tue Dec 15 10:17:22 BRT 2020
+derivedResources=.gradle;build
+linkedResources=
+classpath=<?xml version\="1.0" encoding\="UTF-8"?>\n<classpath>\n<classpathentry kind\="lib" path\="C\:/Users/Diego/.gradle/caches/modules-2/files-2.1/org.jfree/jcommon/1.0.23/a316f336ca996e0c6bec4e4fbd49be8f5e1c3968/jcommon-1.0.23.jar" sourcepath\="C\:/Users/Diego/.gradle/caches/modules-2/files-2.1/org.jfree/jcommon/1.0.23/76c1fec968d3f6e55cf9bea2855ad33d085a6b6/jcommon-1.0.23-sources.jar">\r\n\t<attributes>\r\n\t\t<attribute name\="gradle_used_by_scope" value\="main,test"/>\r\n\t\t<attribute name\="org.eclipse.jst.component.dependency" value\="/WEB-INF/lib"/>\r\n\t</attributes>\r\n</classpathentry>\r\n<classpathentry kind\="lib" path\="C\:/Users/Diego/.gradle/caches/modules-2/files-2.1/org.jfree/jfreechart/1.5.0/bc7919249bac68c15c433ed51cb798a1bf8cd74e/jfreechart-1.5.0.jar" sourcepath\="C\:/Users/Diego/.gradle/caches/modules-2/files-2.1/org.jfree/jfreechart/1.5.0/2ce0d4602a285a5e34a9c2a6a179949f61116f4/jfreechart-1.5.0-sources.jar">\r\n\t<attributes>\r\n\t\t<attribute name\="gradle_used_by_scope" value\="main,test"/>\r\n\t\t<attribute name\="org.eclipse.jst.component.dependency" value\="/WEB-INF/lib"/>\r\n\t</attributes>\r\n</classpathentry>\r\n</classpath>\n
+managedNatures=org.eclipse.wst.common.project.facet.core.nature;org.eclipse.wst.common.modulecore.ModuleCoreNature;org.eclipse.jem.workbench.JavaEMFNature
+buildDir=build
+managedBuilders=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><commands/>
+buildScriptPath=build.gradle
+subprojectPaths=
+hasAutoBuildTasks=false
+gradleVersion=6.5.1

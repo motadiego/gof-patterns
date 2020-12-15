@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="No"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.jfree.data.category.DefaultCategoryDataset"/>
+    <fullyQualifiedTypeName name="composite.TrechoSimples"/>
+    <fullyQualifiedTypeName name="composite.TrechoAereo"/>
+    <fullyQualifiedTypeName name="chainofresponsibility.RecuperadorArquivo"/>
+</qualifiedTypeNameHistroy>

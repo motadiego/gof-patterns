@@ -1,0 +1,23 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.0.RELEASE'
+	id 'java'
+	
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'war'
+
+group = 'br.com.esig'
+sourceCompatibility = '1.11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// https://mvnrepository.com/artifact/org.jfree/jcommon
+	compile group: 'org.jfree', name: 'jcommon', version: '1.0.23'
+	
+	// https://mvnrepository.com/artifact/org.jfree/jfreechart
+	compile group: 'org.jfree', name: 'jfreechart', version: '1.5.0'			
+}

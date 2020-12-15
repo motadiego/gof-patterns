@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Painel SBA</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/quark-theme/main.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/fonts/Metropolis/stylesheet.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+        
+   	<script src="https://unpkg.com/vue"></script>
+   	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   	
+   	<link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png">
+   	
+</head>
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+	<script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
+    <div class="container-fluid" id="app">
+    	<div class="row">
+			<div class="col text-center h3 mt-4">Status das Sincroniza&ccedil;&otilde;es</div>
+		</div>
+    	<div class="row" style="margin-bottom: 30px">&nbsp</div>
+  		<div class="row">
+		    <div class="col">
+		    <table class="table table-hover">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Nome</th>
+			      <th scope="col">Tipo</th>
+			      <th scope="col">Limite por Execu&ccedil;&atilde;o</th>
+			      <th scope="col">Total</th>
+			      <th scope="col">Sincronizado</th>
+			      <th scope="col">&Uacute;ltimo Importado</th>
+			      <th scope="col">&Uacute;ltimo na Origem</th>
+			      <th scope="col">Progresso</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr v-for="sincronizacao in sincronizacoes" :key="sincronizacao.id">
+				  <td>{{ sincronizacao.base.id }}</td>
+				  <td>{{ sincronizacao.base.nome }}</td>
+				  <td>{{ sincronizacao.base.sincronizador.name }}</td>
+				  <td>{{ sincronizacao.base.limitePorExecucao }}</td>
+				  <td>{{ sincronizacao.countOrigem }}</td>
+				  <td>{{ sincronizacao.countDestino }}</td>
+				  <td>{{ sincronizacao.pontoDestino }}</td>
+				  <td>{{ sincronizacao.pontoOrigem }}</td>
+				  <td>
+			    	<div class="progress" style="position: relative">
+					  <div 
+					  	class="progress-bar bg-success" 
+					  	:style="{ width: `${calcPercent(sincronizacao.countDestino, sincronizacao.countOrigem)}%` }" 
+					  	role="progressbar" 
+					  	aria-valuenow="calcPercent(sincronizacao.countDestino, sincronizacao.countOrigem)" 
+					  	aria-valuemin="0" 
+					  	aria-valuemax="100"
+					  >
+					  </div>
+					  <span style="position: absolute; color: white; left: 40%">{{ `${calcPercent(sincronizacao.countDestino, sincronizacao.countOrigem)}%` }}</span>
+					  <div 
+					  	class="progress-bar bg-danger" 
+					  	:style="{ width: `${100 - calcPercent(sincronizacao.countDestino, sincronizacao.countOrigem)}%` }" 
+					  	role="progressbar" 
+					  	aria-valuenow="calcPercent(sincronizacao.countDestino, sincronizacao.countOrigem)" 
+					  	aria-valuemin="0" 
+					  	aria-valuemax="100"
+					  >
+					  
+					  </div>
+					</div>
+				  </td>
+			    </tr>
+			  </tbody>
+		    </table>
+  		</div>
+    </div>
+
+    <script>
+	    var app = new Vue({
+	    	el: "#app",
+	    	data: {
+	    		sincronizacoes: []
+	    	},
+	    	methods: {
+	    		calcPercent(atual, total) {
+	    			return Math.round(atual / total * 100);
+	    		},
+	    		atualizaSincronizacoes() {
+		    	    this.$http.get('/sincronizacoes').then(response => {
+		   			    this.sincronizacoes = response.body;
+		   			  }, response => {
+		   			    // error callback
+		   			  });
+		    	    
+		    	    setTimeout(this.atualizaSincronizacoes, 5000);
+	    		}
+	    	},
+	    	mounted() {
+				this.atualizaSincronizacoes();
+	    	}
+	    });
+    </script>
+    
+    <style>
+    	.hoverable {
+    		margin: 30px 0px 30px 0px; 
+    		cursor: pointer;
+    	}
+    	
+    	.hoverable:hover {
+    		color: grey;
+    	}
+    </style>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/static/js/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="/static/js/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="/static/js/type.animation.js"></script>
+    <script>
+        $(document).ready(function () {
+            //change colour when radio is selected
+            $('main input:radio').change(function () {
+                // Only remove the class in the specific `box` that contains the radio
+                $('div.border-primary').removeClass('border-primary');
+                $(this).closest('.custom-radio-wrapper').addClass('border-primary');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+package chainofresponsibility;
+
+public class Arquivo {
+	
+	public boolean isValido() {
+		return true;
+	}
+}
