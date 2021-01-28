@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="No"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.jfree.data.category.DefaultCategoryDataset"/>
     <fullyQualifiedTypeName name="composite.TrechoSimples"/>
     <fullyQualifiedTypeName name="composite.TrechoAereo"/>
     <fullyQualifiedTypeName name="chainofresponsibility.RecuperadorArquivo"/>
+    <fullyQualifiedTypeName name="br.com.gof.patterns.adapter.SMSSender"/>
+    <fullyQualifiedTypeName name="br.com.gof.patterns.adapter.SMSAdapter"/>
+    <fullyQualifiedTypeName name="br.com.gof.patterns.adapter.SMS"/>
+    <fullyQualifiedTypeName name="br.com.gof.patterns.adapter.EnviadorSMS"/>
+    <fullyQualifiedTypeName name="br.com.gof.patterns.adapter.EnviadorSMSImpl"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="br.com.gof.patterns.visitor.FormatoVisitante"/>
+    <fullyQualifiedTypeName name="br.com.gof.patterns.visitor.Relatorio"/>
+    <fullyQualifiedTypeName name="br.com.gof.patterns.visitor.ComprasCliente"/>
+    <fullyQualifiedTypeName name="br.com.gof.patterns.visitor.Cliente"/>
+    <fullyQualifiedTypeName name="br.com.gof.patterns.visitor.Item"/>
+    <fullyQualifiedTypeName name="br.com.gof.patterns.visitor.VisitanteHtml"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>
